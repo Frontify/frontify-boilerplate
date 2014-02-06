@@ -50,7 +50,7 @@ grunt app
 This command generates all resources needed by the front-end and runs it within a node server. You don't have to install an additional webserver. The script opens up your default browser on
 
 ```
-http://localhost:3000/#/login
+http://localhost:3000/#/
 ```
 
 > Notice: You are not limited to a node server. You can run the application on every webserver.
