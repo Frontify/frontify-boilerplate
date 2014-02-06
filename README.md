@@ -2,6 +2,8 @@
 
 > Framework for your simple, maintainable & super-fast front-end application
 
+[![Build Status](https://travis-ci.org/Frontify/frontify-boilerplate.png?branch=master)](https://travis-ci.org/Frontify/frontify-boilerplate)
+
 ## Goals
 
 * Complete front-end/back-end separation
