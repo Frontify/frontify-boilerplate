@@ -2,6 +2,21 @@
 
 > Framework for your simple, maintainable & super-fast front-end application
 
+## Goals
+
+* Small footprint
+* Minimal production dependencies
+* Maintainability through a component system for HTML/CSS/JS (with Naming Conventions)
+* Declarative View/Layout through json configuration
+* Built-in CSS pre-compiler support
+* Auto-compilation on changes
+* Simple and fast development environment
+* Minimal deployment bundle for production (static files)
+* Optimized resources for production (concatenated, minified)
+* Multi-language support
+* Extensible
+* Fast!
+
 ## Prerequisites
 
 > The following requirements are only needed for development.
