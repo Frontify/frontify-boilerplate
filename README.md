@@ -39,6 +39,14 @@ http://localhost:3000/#/login
 
 > Notice: You are not limited to a node server. You can run the application on every webserver.
 
+## Distribution
+
+To prepare your application for deployment, run the following command to create a zip package `dist/application.zip` with all resources and assets needed for deployment on a webserver.
+
+```shell
+grunt dist
+```
+
 ## Pre-Compilation, Concatenation & Minification
 
 > Normally, the following tasks do not need to be run manually, because of the watch tasks.

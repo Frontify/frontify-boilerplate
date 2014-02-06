@@ -31,7 +31,7 @@ module.exports = function(grunt) {
             });
             nodemon.on('config:update', function () {
               setTimeout(function() {
-                require('open')('http://localhost:3000/#/login');
+                require('open')('http://localhost:3000/#/');
               }, 1000);
             });
           }
@@ -290,7 +290,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-locales');
   grunt.loadNpmTasks('grunt-smushit');
   grunt.loadNpmTasks('grunt-spritesheet');
-  grunt.loadNpmTasks('grunt-replace');
 
   // register tasks
   grunt.registerTask('default', ['locales:update','locales:build','less:production','dot','concat','uglify','cssmin']);
