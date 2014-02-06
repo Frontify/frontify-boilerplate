@@ -4,10 +4,10 @@
 
 ## Goals
 
-* Complete Front-end/Back-end separation
+* Complete front-end/back-end separation
 * Small footprint
 * Minimal production dependencies
-* Maintainability through a component system for HTML/CSS/JS (with Naming Conventions)
+* Maintainability through a component system for HTML/CSS/JS (with naming conventions)
 * Declarative View/Layout through json configuration
 * Built-in CSS pre-compiler support
 * Auto-compilation on changes
@@ -228,4 +228,4 @@ The framework is intended to be compatible with all major browsers, including IE
 
 ## Credits
 
-Built by [Frontify](https://frontify.com)
+Built by Roger Dudler @ [Frontify](https://frontify.com)
