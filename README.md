@@ -93,7 +93,7 @@ grunt cssmin
 
 ## Modules
 
-Each component or block of the UI is called a module. Examples are `Logo`, `Navigation`, `Listing`. These modules are located in the `src/app/modules` directory and they contain all their relevant `*.html`, `*.css/*.less` and `*.js` files. This separates the code in a maintainable way, even for very large applications.
+Each component or block of the UI is called module. Examples are `Logo` or `Navigation`. These modules are located in the `src/app/modules` directory and they contain all their relevant `*.html`, `*.css/*.less` and `*.js` files. This separates the code in a maintainable way, even for very large applications.
 
 ### HTML Skeleton
 
