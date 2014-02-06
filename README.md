@@ -147,10 +147,7 @@ Here's an example of the default layout markup (`src/app/modules/Layout/layout-d
 
 ```html
 <header data-region="header"></header>
-<div>
-    <div data-region="sidebar"></div>
-    <div data-region="content"></div>
-</div>
+<div data-region="content"></div>
 <footer data-region="footer"></footer>
 ```
 
