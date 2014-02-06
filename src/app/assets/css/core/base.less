@@ -1,0 +1,46 @@
+@import "variables.less";
+
+// css reset
+html{color:#000;background:#FFF}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal}ol,ul{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}q:before,q:after{content:''}abbr,acronym{border:0;font-variant:normal}sup{vertical-align:text-top}sub{vertical-align:text-bottom}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;*font-size:100%}legend{color:#000}#yui3-css-stamp.cssreset{display:none}
+
+// basic layout styles
+html, body {
+	height: 100%;
+}
+
+html {
+	background: #F8F8F8;
+}
+
+body {
+	color: @color-text;
+}
+
+body, button, td, input, select, textarea {
+	font-family: @font-sans;
+	font-size: 12px;
+}
+
+a {
+	color: @color-text;
+	text-decoration: none;
+}
+
+// clear fix
+.row:before,
+.row:after,
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.row:after,
+.clearfix:after {
+    clear: both;
+}
+
+.row,
+.clearfix {
+    *zoom: 1;
+}

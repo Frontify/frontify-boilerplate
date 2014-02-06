@@ -1,0 +1,14 @@
+{
+    "views": [
+        { 
+            "id": 1,
+            "route": "/",
+            "title": "Home",
+            "layout": "default",
+            "modules": {
+                "header": [ "logo", "navigation" ],
+                "content": [ ]
+            }
+        }
+    ]
+}
