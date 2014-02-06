@@ -4,6 +4,7 @@
 
 ## Goals
 
+* Complete Front-end/Back-end separation
 * Small footprint
 * Minimal production dependencies
 * Maintainability through a component system for HTML/CSS/JS (with Naming Conventions)
