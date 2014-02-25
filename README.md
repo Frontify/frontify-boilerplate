@@ -95,7 +95,7 @@ grunt cssmin
 
 ## Modules
 
-Each component or block of the UI is called module. Examples are `Logo` or `Navigation`. These modules are located in the `src/app/modules` directory and they contain all their relevant `*.html`, `*.css/*.less` and `*.js` files. This separates the code in a maintainable way, even for very large applications.
+Each component or block of the UI is called module. Examples are `Logo` or `Navigation`. These modules are located in the `app/modules` directory and they contain all their relevant `*.html`, `*.css/*.less` and `*.js` files. This separates the code in a maintainable way, even for very large applications.
 
 ### HTML Skeleton
 
@@ -107,7 +107,7 @@ All `.html` files are handled as [doT](http://olado.github.io/doT/index.html) te
 
 ### CSS/LESS Skeleton
 
-Here's an example of such a module css snippet. Placed as `src/app/modules/Example/css/example.less`. You can use [LESS](http://lesscss.org/) syntax to make use of mixins, variables & other pre-compilation features. Read the [documentation](http://lesscss.org/features/) for more information on the syntax.
+Here's an example of such a module css snippet. Placed as `app/modules/Example/css/example.less`. You can use [LESS](http://lesscss.org/) syntax to make use of mixins, variables & other pre-compilation features. Read the [documentation](http://lesscss.org/features/) for more information on the syntax.
 
 > Be sure to use prefix .mod-modulename for every rule. Scoping is important for maintainable code.
 
@@ -121,7 +121,7 @@ Here's an example of such a module css snippet. Placed as `src/app/modules/Examp
 
 You can write vanilla javascript or you can create modules (recommended), a concept introduced by the open-source library [Terrific.js](https://terrifically.org). Read more about the usage and features in the [documentation](https://terrifically.org/api). Modules are great for writing small pieces of maintainable javascript code scoped on the actual module, rather than on the whole application.
 
-Here's an example of such a module javascript snippet. Placed as `src/app/modules/Example/js/example.js`
+Here's an example of such a module javascript snippet. Placed as `app/modules/Example/js/example.js`
 
 ```javascript
 (function($) {
@@ -139,7 +139,7 @@ Here's an example of such a module javascript snippet. Placed as `src/app/module
 
 ## Views
 
-The application views are configured within `src/app/api/app/views.json`.
+The application views are configured within `app/api/app/views.json`.
 
 Here's an example of a view configuration.
 
@@ -159,9 +159,9 @@ Here's an example of a view configuration.
 
 ## Layouts
 
-All layouts are located in `src/app/modules/Layout`. Each layout defines regions with `data-region` attributes. They are filled with the modules configured in the corresponding view, as seen above.
+All layouts are located in `app/modules/Layout`. Each layout defines regions with `data-region` attributes. They are filled with the modules configured in the corresponding view, as seen above.
 
-Here's an example of the default layout markup (`src/app/modules/Layout/layout-default.html`).
+Here's an example of the default layout markup (`app/modules/Layout/layout-default.html`).
 
 ```html
 <header data-region="header"></header>
@@ -187,7 +187,7 @@ Here's an example markup with a localized string
 
 ### Build locales javascript files
 
-Generates reusable javascript files for every locale and writes them to `src/app/assets/dist/js/locales`.
+Generates reusable javascript files for every locale and writes them to `app/assets/dist/js/locales`.
 
 ```shell
 grunt locales:build
@@ -215,14 +215,14 @@ All compilations needed for run-time are done automatically on file changes. Som
 
 The JavaScript build generates two concatenated `*.js files.
 
-* `src/app/assets/dist/js/application-core.min.js` Minified version of javascript libraries
-* `src/app/assets/dist/js/application.min.js` Minified version of application-specific javascript
+* `app/assets/dist/js/application-core.min.js` Minified version of javascript libraries
+* `app/assets/dist/js/application.min.js` Minified version of application-specific javascript
 
 > In addition, there are some language specific javascript files generated.
 
 ### CSS
 
-* `src/app/assets/dist/css/application.min.css` Minified version of application-specific css
+* `app/assets/dist/css/application.min.css` Minified version of application-specific css
 
 ## Compatibility
 

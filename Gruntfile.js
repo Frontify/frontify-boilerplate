@@ -19,7 +19,7 @@ module.exports = function(grunt) {
     // start node server, reload on node file changes
     nodemon: {
       dev: {
-        script: 'src/app/index.js',
+        script: 'app/index.js',
         options: {
           nodeArgs: ['--debug'],
           env: {
@@ -42,21 +42,21 @@ module.exports = function(grunt) {
     // watch files for instant compilation and live reload
     watch: {
       less: {
-        files: 'src/**/*.less',
+        files: '**/*.less',
         tasks: ['less:development','concat:css'],
         options: {
           livereload: true,
         },
       },
       javascript: {
-        files: 'src/app/assets/js/**/*.js',
+        files: 'app/assets/js/**/*.js',
         tasks: ['concat:jscore'],
         options: {
           livereload: false,
         },
       },
       dot: {
-        files: 'src/app/modules/**/*.html',
+        files: 'app/modules/**/*.html',
         tasks: ['locales:update', 'locales:build', 'dot','concat:js'],
         options: {
           livereload: false,
@@ -64,28 +64,28 @@ module.exports = function(grunt) {
         },
       },
       modules_javascript: {
-        files: 'src/app/modules/**/*.js',
+        files: 'app/modules/**/*.js',
         tasks: ['concat:js'],
         options: {
           livereload: false,
         },
       },
       css: {
-        files: 'src/app/assets/css/**/*.css',
+        files: 'app/assets/css/**/*.css',
         tasks: ['concat:css'],
         options: {
           livereload: false,
         },
       },
       modules: {
-        files: 'src/app/modules/**/*.css',
+        files: 'app/modules/**/*.css',
         tasks: ['concat:css'],
         options: {
           livereload: false,
         },
       },
       html: {
-        files: 'src/app/views/index.html',
+        files: 'app/views/index.html',
         options: {
           livereload: false,
         },
@@ -106,21 +106,21 @@ module.exports = function(grunt) {
     less: {
       development: {
         options: {
-          paths: ["src/app/assets/css/core"]
+          paths: ["app/assets/css/core"]
         },
         files: {
-          "build/less/modules.css": "src/app/modules/*/css/*.less",
-          "build/less/core.css": "src/app/assets/css/core/*.less"
+          "build/less/modules.css": "app/modules/*/css/*.less",
+          "build/less/core.css": "app/assets/css/core/*.less"
         }
       },
       production: {
         options: {
-          paths: ["src/app/assets/css/core"],
+          paths: ["app/assets/css/core"],
           cleancss: true
         },
         files: {
-          "build/less/modules.css": "src/app/modules/*/css/*.less",
-          "build/less/core.css": "src/app/assets/css/core/*.less"
+          "build/less/modules.css": "app/modules/*/css/*.less",
+          "build/less/core.css": "app/assets/css/core/*.less"
         }
       }
     },
@@ -131,7 +131,7 @@ module.exports = function(grunt) {
         options: {
           variable : 'tmpl'
         },
-        src  : ['src/app/modules/**/*.html'],
+        src  : ['app/modules/**/*.html'],
         dest : 'build/js/templates.js'
       }
     },
@@ -144,62 +144,62 @@ module.exports = function(grunt) {
       // contains core js files, not updated frequently
       jscore: {
         src: [
-          'src/app/assets/js/core/jquery.min.js', 
-          'src/app/assets/js/core/terrific.min.js', 
-          'src/app/assets/js/core/dot.min.js', 
-          'src/app/assets/js/libraries/**/*.js',
-          'src/app/assets/js/plugins/**/*.js'
+          'app/assets/js/core/jquery.min.js', 
+          'app/assets/js/core/terrific.min.js', 
+          'app/assets/js/core/dot.min.js', 
+          'app/assets/js/libraries/**/*.js',
+          'app/assets/js/plugins/**/*.js'
         ],
-        dest: 'src/app/assets/dist/js/<%= pkg.name %>-core.js'
+        dest: 'app/assets/dist/js/<%= pkg.name %>-core.js'
       },
       // contains application js files, updated frequently
       js: {
         src: [
           'build/js/templates.js',
-          'src/app/modules/**/*.js'
+          'app/modules/**/*.js'
         ],
-        dest: 'src/app/assets/dist/js/<%= pkg.name %>.js'
+        dest: 'app/assets/dist/js/<%= pkg.name %>.js'
       },
       // contains ie-specific js files, updated infrequently
       jsie: {
         src: [
-          'src/app/assets/js/ie/**/*.js'
+          'app/assets/js/ie/**/*.js'
         ],
-        dest: 'src/app/assets/dist/js/<%= pkg.name %>-ie.js'
+        dest: 'app/assets/dist/js/<%= pkg.name %>-ie.js'
       },
       // contains all css and less files
       css: {
         src: [
           'build/less/core.css',
-          'src/app/assets/css/core/*.css',
-          'src/app/modules/**/*.css',
+          'app/assets/css/core/*.css',
+          'app/modules/**/*.css',
           'build/less/modules.css'
         ],
-        dest: 'src/app/assets/dist/css/<%= pkg.name %>.css'
+        dest: 'app/assets/dist/css/<%= pkg.name %>.css'
       }
     },
 
     // minify js files
     uglify: {
       core: {
-        src: 'src/app/assets/dist/js/<%= pkg.name %>-core.js',
-        dest: 'src/app/assets/dist/js/<%= pkg.name %>-core.min.js'
+        src: 'app/assets/dist/js/<%= pkg.name %>-core.js',
+        dest: 'app/assets/dist/js/<%= pkg.name %>-core.min.js'
       },
       modules: {
-        src: 'src/app/assets/dist/js/<%= pkg.name %>.js',
-        dest: 'src/app/assets/dist/js/<%= pkg.name %>.min.js'
+        src: 'app/assets/dist/js/<%= pkg.name %>.js',
+        dest: 'app/assets/dist/js/<%= pkg.name %>.min.js'
       },
       ie: {
-        src: 'src/app/assets/dist/js/<%= pkg.name %>-ie.js',
-        dest: 'src/app/assets/dist/js/<%= pkg.name %>-ie.min.js'
+        src: 'app/assets/dist/js/<%= pkg.name %>-ie.js',
+        dest: 'app/assets/dist/js/<%= pkg.name %>-ie.min.js'
       }
     },
 
     // minify css file
     cssmin: {
       dist: {
-        src: 'src/app/assets/dist/css/<%= pkg.name %>.css',
-        dest: 'src/app/assets/dist/css/<%= pkg.name %>.min.css'
+        src: 'app/assets/dist/css/<%= pkg.name %>.css',
+        dest: 'app/assets/dist/css/<%= pkg.name %>.min.css'
       }
     },
 
@@ -209,12 +209,12 @@ module.exports = function(grunt) {
         locales: ['en_US']
       },
       update: {
-        src: 'src/app/modules/**/*.html',
+        src: 'app/modules/**/*.html',
         dest: 'build/js/locales/{locale}/i18n.json'
       },
       build: {
         src: 'build/js/locales/**/i18n.json',
-        dest: 'src/app/assets/dist/js/locales/{locale}/i18n.js'
+        dest: 'app/assets/dist/js/locales/{locale}/i18n.js'
       },
       'export': {
         src: 'build/js/locales/**/i18n.json',
@@ -228,26 +228,26 @@ module.exports = function(grunt) {
 
     smushit: {
       images: {
-        src: ['src/app/assets/img/**/*.png','src/app/assets/img/**/*.jpg'],
+        src: ['app/assets/img/**/*.png','app/assets/img/**/*.jpg'],
         dest: 'dist/assets/img'
       }
     },
 
     copy: {
       html: {
-        src: 'src/app/views/index-prod.html',
+        src: 'app/views/index-prod.html',
         dest: 'dist/index.html'
       },
       assets: {
         files: [
-          { expand: true, cwd: 'src/app/assets/dist/', flatten: false, src: ['**'], dest: 'dist/assets/' },
-          { expand: true, cwd: 'src/app/assets/', flatten: false, src: ['fonts/**'], dest: 'dist/assets/' },
-          { expand: true, cwd: 'src/app/assets/', flatten: false, src: ['img/**'], dest: 'dist/assets/' }
+          { expand: true, cwd: 'app/assets/dist/', flatten: false, src: ['**'], dest: 'dist/assets/' },
+          { expand: true, cwd: 'app/assets/', flatten: false, src: ['fonts/**'], dest: 'dist/assets/' },
+          { expand: true, cwd: 'app/assets/', flatten: false, src: ['img/**'], dest: 'dist/assets/' }
         ]
       },
       api: {
         files: [
-          { expand: true, cwd: 'src/app/api/', flatten: false, src: ['**'], dest: 'dist/api/' }
+          { expand: true, cwd: 'app/api/', flatten: false, src: ['**'], dest: 'dist/api/' }
         ]
       }
     },

@@ -1,7 +1,7 @@
-build
-src/app/assets/dist/css
-src/app/assets/dist/js
-src/app/assets/dist/img
+/build
+/src/app/assets/dist/css
+/src/app/assets/dist/js
+/src/app/assets/dist/img
 .DS_Store
-dist/
-.grunt
+/dist/
+/.grunt
