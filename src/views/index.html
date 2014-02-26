@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Example Application</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" href="/assets/css/application.css" type="text/css" />
+    <link href='//fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css' />
+    <link rel="shortcut icon" href="/assets/img/favicon.png" />
+    <!--[if lt IE 9]><script src="/assets/js/application-ie.js"></script><![endif]-->
+</head>
+<body>
+    <div class="mod mod-layout"></div>
+    <script type="text/javascript" src="/assets/js/application-core.js"></script>
+    <script type="text/javascript" src="/assets/js/application.js"></script>
+    <script type="text/javascript">
+        var application = null;
+        (function($) {
+            $(document).ready(function() {
+                var $page = $('body');
+                application = new Tc.Application($page);
+                application.registerModules();
+                application.registerModule($page, 'App');
+                application.start();
+            });
+        })(Tc.$);
+    </script>
+    <script src="//localhost:35729/livereload.js"></script>
+</body>
+</html>
