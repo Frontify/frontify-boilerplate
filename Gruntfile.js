@@ -57,7 +57,7 @@ module.exports = function(grunt) {
       },
       dot: {
         files: 'app/modules/**/*.html',
-        tasks: ['locales:update', 'locales:build', 'dot','concat:js'],
+        tasks: ['dot','concat:js'],
         options: {
           livereload: false,
           spawn: false
@@ -95,10 +95,6 @@ module.exports = function(grunt) {
         options: {
           livereload: false
         }
-      },
-      locales: {
-        files: 'build/js/locales/**/i18n.json',
-        tasks: ['locales:build']
       }
     },
 
@@ -203,36 +199,6 @@ module.exports = function(grunt) {
       }
     },
 
-    // extract i18n strings (data-localize) and build js files
-    locales: {
-      options: {
-        locales: ['en_US']
-      },
-      update: {
-        src: 'app/modules/**/*.html',
-        dest: 'build/js/locales/{locale}/i18n.json'
-      },
-      build: {
-        src: 'build/js/locales/**/i18n.json',
-        dest: 'app/assets/dist/js/locales/{locale}/i18n.js'
-      },
-      'export': {
-        src: 'build/js/locales/**/i18n.json',
-        dest: 'build/js/locales/locales.csv'
-      },
-      'import': {
-        src: 'build/js/locales/locales.csv',
-        dest: 'build/js/locales/{locale}/i18n.json'
-      }
-    },
-
-    smushit: {
-      images: {
-        src: ['app/assets/img/**/*.png','app/assets/img/**/*.jpg'],
-        dest: 'dist/assets/img'
-      }
-    },
-
     copy: {
       html: {
         src: 'app/views/index-prod.html',
@@ -268,15 +234,8 @@ module.exports = function(grunt) {
 
   });
 
-  // only watch on changed files
-  grunt.event.on('watch', function (action, file) {
-      grunt.config('locales.update.options.purgeLocales', false);
-      grunt.config('locales.update.src', file);
-  });
-
   // load npm tasks
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
@@ -287,13 +246,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-dot-compiler');
   grunt.loadNpmTasks('grunt-concurrent');
   grunt.loadNpmTasks('grunt-nodemon');
-  grunt.loadNpmTasks('grunt-locales');
-  grunt.loadNpmTasks('grunt-smushit');
-  grunt.loadNpmTasks('grunt-spritesheet');
 
   // register tasks
-  grunt.registerTask('default', ['locales:update','locales:build','less:production','dot','concat','uglify','cssmin']);
-  grunt.registerTask('app', ['locales:update','locales:build','less:production','dot','concat','concurrent']);
-  grunt.registerTask('dist', ['clean','locales:update','locales:build','less:production','dot','concat','uglify','cssmin','copy','compress']);
+  grunt.registerTask('default', ['less:production','dot','concat','uglify','cssmin']);
+  grunt.registerTask('app', ['less:production','dot','concat','concurrent']);
+  grunt.registerTask('dist', ['clean','less:production','dot','concat','uglify','cssmin','copy','compress']);
 
 };
