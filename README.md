@@ -16,7 +16,6 @@
 * Simple and fast development environment
 * Minimal deployment bundle for production (static files)
 * Optimized resources for production (concatenated, minified)
-* Multi-language support
 * Extensible
 * Fast!
 
@@ -167,42 +166,6 @@ Here's an example of the default layout markup (`app/modules/Layout/layout-defau
 <header data-region="header"></header>
 <div data-region="content"></div>
 <footer data-region="footer"></footer>
-```
-
-## Translations
-
-### Extract localized strings
-
-Extracts all strings within elements with a `data-localize` attribute and generates json files with the extracted strings to `/build/js/locales`.
-
-```shell
-grunt locales:update
-```
-
-Here's an example markup with a localized string
-
-```html
-<div data-localize>Example</div>
-```
-
-### Build locales javascript files
-
-Generates reusable javascript files for every locale and writes them to `app/assets/dist/js/locales`.
-
-```shell
-grunt locales:build
-```
-
-### Export CSV data
-
-```shell
-grunt locales:export
-```
-
-### Import CSV data
-
-```shell
-grunt locales:import
 ```
 
 ## Watcher
