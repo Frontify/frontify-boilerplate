@@ -40,6 +40,14 @@
 * [LESS](http://lesscss.org) (Pre-Compiler)
 * [YUI CSS Reset](http://yuilibrary.com/yui/docs/cssreset/) (Cross-Browser Style Reset)
 
+## Installation
+
+### Install dependencies
+
+```shell
+npm install
+```
+
 ## Getting started
 
 This application uses [grunt](http://gruntjs.com/) to build it's components and run itself. If you haven't used [grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide. Once you're familiar with that process, run the application with the command:
@@ -94,7 +102,7 @@ grunt cssmin
 
 ## Modules
 
-Each component or block of the UI is called module. Examples are `Logo` or `Navigation`. These modules are located in the `app/modules` directory and they contain all their relevant `*.html`, `*.css/*.less` and `*.js` files. This separates the code in a maintainable way, even for very large applications.
+Each component or block of the UI is called module. Examples are `Logo` or `Navigation`. These modules are located in the `src/modules` directory and they contain all their relevant `*.html`, `*.css/*.less` and `*.js` files. This separates the code in a maintainable way, even for very large applications.
 
 ### HTML Skeleton
 
@@ -106,7 +114,7 @@ All `.html` files are handled as [doT](http://olado.github.io/doT/index.html) te
 
 ### CSS/LESS Skeleton
 
-Here's an example of such a module css snippet. Placed as `app/modules/Example/css/example.less`. You can use [LESS](http://lesscss.org/) syntax to make use of mixins, variables & other pre-compilation features. Read the [documentation](http://lesscss.org/features/) for more information on the syntax.
+Here's an example of such a module css snippet. Placed as `src/modules/Example/css/example.less`. You can use [LESS](http://lesscss.org/) syntax to make use of mixins, variables & other pre-compilation features. Read the [documentation](http://lesscss.org/features/) for more information on the syntax.
 
 > Be sure to use prefix .mod-modulename for every rule. Scoping is important for maintainable code.
 
@@ -120,7 +128,7 @@ Here's an example of such a module css snippet. Placed as `app/modules/Example/c
 
 You can write vanilla javascript or you can create modules (recommended), a concept introduced by the open-source library [Terrific.js](https://terrifically.org). Read more about the usage and features in the [documentation](https://terrifically.org/api). Modules are great for writing small pieces of maintainable javascript code scoped on the actual module, rather than on the whole application.
 
-Here's an example of such a module javascript snippet. Placed as `app/modules/Example/js/example.js`
+Here's an example of such a module javascript snippet. Placed as `src/modules/Example/js/example.js`
 
 ```javascript
 (function($) {
@@ -138,7 +146,7 @@ Here's an example of such a module javascript snippet. Placed as `app/modules/Ex
 
 ## Views
 
-The application views are configured within `app/api/app/views.json`.
+The application views are configured within `src/api/app/views.json`.
 
 Here's an example of a view configuration.
 
@@ -158,9 +166,9 @@ Here's an example of a view configuration.
 
 ## Layouts
 
-All layouts are located in `app/modules/Layout`. Each layout defines regions with `data-region` attributes. They are filled with the modules configured in the corresponding view, as seen above.
+All layouts are located in `src/modules/Layout`. Each layout defines regions with `data-region` attributes. They are filled with the modules configured in the corresponding view, as seen above.
 
-Here's an example of the default layout markup (`app/modules/Layout/layout-default.html`).
+Here's an example of the default layout markup (`src/modules/Layout/layout-default.html`).
 
 ```html
 <header data-region="header"></header>
@@ -178,14 +186,14 @@ All compilations needed for run-time are done automatically on file changes. Som
 
 The JavaScript build generates two concatenated `*.js files.
 
-* `app/assets/dist/js/application-core.min.js` Minified version of javascript libraries
-* `app/assets/dist/js/application.min.js` Minified version of application-specific javascript
+* `dist/assets/js/application-core.min.js` Minified version of javascript libraries
+* `dist/assets/js/application.min.js` Minified version of application-specific javascript
 
 > In addition, there are some language specific javascript files generated.
 
 ### CSS
 
-* `app/assets/dist/css/application.min.css` Minified version of application-specific css
+* `dist/assets/css/application.min.css` Minified version of application-specific css
 
 ## Compatibility
 
