@@ -95,13 +95,6 @@ module.exports = function(grunt) {
           livereload: true,
           spawn: false
         }
-      },
-      server: {
-        files: ['.grunt/rebooted'],
-        options: {
-          livereload: true,
-          spawn: false
-        }
       }
     },
 
