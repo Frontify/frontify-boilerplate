@@ -6,7 +6,16 @@
     loading: false,
 
     on: function(callback) {
+
         var that = this;
+        var $ctx = this.$ctx;
+
+        // Override click events for any links, and call Path.history.pushState
+        // method to invoke the PathJS router.
+        $ctx.on('click', 'a', function(event) {
+            event.preventDefault();
+            Path.history.pushState({}, $(this).children('span').text(), $(this).attr('href'));
+        });
         callback();
     },
 
@@ -20,12 +29,13 @@
             dataType: 'json',
             success: function(data) {
                 $.each(data.views, function(key, view) {
-                    that.views[view.id + ''] = view;
-                    Path.map('' + view.route).to(function(){
+                    that.views[view.id] = view;
+                    Path.map(view.route).to(function() {
                         that.view(view.id);
                     });
                 });
-                Path.history.listen(true); // fallback to hashtags if HTML5 is not supported
+                // Listen to history and fallback to hashtags if HTML5 is not supported
+                Path.history.listen(true);
             }
         });
     },
