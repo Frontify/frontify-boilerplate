@@ -1,7 +1,10 @@
 var express = require('express');
 var server = express();
 
-// compress content
+// log all requests
+server.use(express.logger());
+
+// compress all content
 server.use(express.compress());
 
 // routes
