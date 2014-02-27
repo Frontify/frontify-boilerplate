@@ -44,6 +44,8 @@
 
 ### Install dependencies
 
+To install all dependencies required by frontify-boilerplate to work correctly use the following command:
+
 ```shell
 npm install
 ```
@@ -59,7 +61,7 @@ grunt app
 This command generates all resources needed by the front-end and runs it within a node server. You don't have to install an additional webserver. The script opens up your default browser on
 
 ```
-http://localhost:3000/#/
+http://localhost:3000/
 ```
 
 > Notice: You are not limited to a node server. You can run the application on every webserver.
@@ -201,4 +203,4 @@ The framework is intended to be compatible with all major browsers, including IE
 
 ## Credits
 
-Built by Roger Dudler @ [Frontify](https://frontify.com)
+Built by Roger Dudler @ [Frontify](https://frontify.com) & Frank Vollenweider @ Pixabytes
