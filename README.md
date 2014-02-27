@@ -40,16 +40,6 @@
 * [LESS](http://lesscss.org) (Pre-Compiler)
 * [YUI CSS Reset](http://yuilibrary.com/yui/docs/cssreset/) (Cross-Browser Style Reset)
 
-## Installation
-
-### Install dependencies
-
-To install all dependencies required by frontify-boilerplate to work correctly use the following command:
-
-```shell
-npm install
-```
-
 ## Getting started
 
 This application uses [grunt](http://gruntjs.com/) to build it's components and run itself. If you haven't used [grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide. Once you're familiar with that process, run the application with the command:

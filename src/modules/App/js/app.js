@@ -14,9 +14,11 @@
         // method to invoke the PathJS router.
         $ctx.on('click', 'a', function(event) {
             event.preventDefault();
-            Path.history.pushState({}, $(this).children('span').text(), $(this).attr('href'));
+            Path.history.pushState({path: $(this).attr('href')}, $(this).children('span').text(), $(this).attr('href'));
         });
+
         callback();
+
     },
 
     after: function() {
