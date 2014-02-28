@@ -149,9 +149,7 @@ Here's an example of a view configuration.
     "title": "Example",
     "layout": "default",
     "modules": {
-        "header": [ "logo", "navigation" ],
-        "content": [],
-        "footer": [ "footer" ]
+        "content": [ "article-home"]
     }
 }
 ```
@@ -166,6 +164,17 @@ Here's an example of the default layout markup (`src/modules/Layout/layout-defau
 <header data-region="header"></header>
 <div data-region="content"></div>
 <footer data-region="footer"></footer>
+```
+
+and here is the definition of the default state (default modules, etc.), which will be extended through the specific view configuration.
+
+```json
+{ 
+    "id": "default",
+    "modules": {
+        "header": [ "logo", "navigation" ]
+    }
+}
 ```
 
 ## Watcher
