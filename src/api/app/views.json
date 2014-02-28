@@ -14,7 +14,7 @@
             "title": "Home",
             "layout": "default",
             "modules": {
-                "content": [ "home" ]
+                "content": [ "article-home" ]
             }
         },
         { 
@@ -23,7 +23,7 @@
             "title": "Users",
             "layout": "default",
             "modules": {
-                "content": [ "user" ]
+                "content": [ "article-user" ]
             }
         }
     ]

@@ -15,7 +15,7 @@
 
         // Override click events for any links, and call Path.history.pushState
         // method to invoke the PathJS router.
-        $ctx.on('click', 'a', function(event) {
+        $('body').on('click', 'a[href]', function(event) {
             var route = $(this).attr('href');
             if (that.routes[route]) {
                 event.preventDefault();
@@ -75,6 +75,8 @@
 
         // set current view id
         this.currentView = id;
+
+        // set current document title
         document.title = view['title'];
 
         // if there is a layout change, initialize it
