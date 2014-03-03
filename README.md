@@ -200,6 +200,16 @@ The JavaScript build generates two concatenated `*.js files.
 
 The framework is intended to be compatible with all major browsers, including IE7+.
 
+## Testing
+
+Add the following test script configuration to your package.json to enable [nightwatch](http://nightwatchjs.org/) tests.
+
+```json
+"scripts": {
+  "test": "./nightwatch -t test/nightwatch.js"
+}
+```
+
 ## Credits
 
 Built by Roger Dudler @ [Frontify](https://frontify.com) & Frank Vollenweider @ Pixabytes
