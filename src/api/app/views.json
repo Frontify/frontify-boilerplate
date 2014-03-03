@@ -19,8 +19,8 @@
         },
         { 
             "id": 2,
-            "route": "/users/",
-            "title": "Users",
+            "route": "/user",
+            "title": "User",
             "layout": "default",
             "modules": {
                 "content": [ "article-user" ]
