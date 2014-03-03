@@ -212,6 +212,10 @@ module.exports = function(grunt) {
         files: [
           {expand: true, cwd: 'src/api/', src: ['**'], dest: 'dist/api/' }
         ]
+      },
+      runtime: {
+          src: ['src/resources/.htaccess'],
+          dest: 'dist/.htaccess'
       }
     },
 
