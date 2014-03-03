@@ -5,8 +5,8 @@
             "link": "/"
         },
         {
-            "label": "Users",
-            "link": "/users/"
+            "label": "User",
+            "link": "/user"
         },
         {
             "label": "Example",
