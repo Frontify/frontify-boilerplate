@@ -202,7 +202,9 @@ The framework is intended to be compatible with all major browsers, including IE
 
 ## Testing
 
-Add the following test script configuration to your package.json to enable [nightwatch](http://nightwatchjs.org/) tests.
+* Download [Selenium Standalone](http://selenium-release.storage.googleapis.com/2.40/selenium-server-standalone-2.40.0.jar) to a directory and execute `java -jar selenium-server-standalone-2.40.0.jar` within the directory to start Selenium
+* Add the following test script configuration to your package.json to enable [nightwatch](http://nightwatchjs.org/) tests
+* Run `npm test`
 
 ```json
 "scripts": {
